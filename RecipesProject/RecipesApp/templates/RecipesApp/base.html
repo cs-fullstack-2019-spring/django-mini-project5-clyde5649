@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<header class="jumbotron">
+    <h1>Welcome to the Recipe Book Come In</h1>
+</header>
+
+{% block content %}
+<h1>Welcome Home</h1>
+
+<a href="{% url 'newrecipepage' %}">recipespage</a>
+<a href="{% url 'allrecipepage' %}">allrecipes</a>
+
+{% endblock content %}
+
+
+<h1>Createpage</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ new_form.as_p }}
+    <button>Submit</button>
+
+
+</body>
+</html>
